@@ -29,7 +29,7 @@ img {
 
 .content-wrapper {
     min-height: 100vh;
-    background-color: var(--dark-color);
+    background-color: rgba(255, 255, 255, 0.59);
 }
 
 .content-wrapper .container {
@@ -119,7 +119,7 @@ img {
 .search-list .search-list-item {
     background-color: var(--light-dark-color);
     padding: 0.5rem;
-    border-bottom: 1px solid var(--dark-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.59);
     width: calc(350px - 8px);
     color: #fff;
     cursor: pointer;
