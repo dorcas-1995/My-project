@@ -8,3 +8,14 @@ async function loadApiMovies(searchName) {
   const data = await fetchres.json();
   if (data.Response == "True") MovieListDisplayFunc(data.Search);
 }
+
+
+function findApiMovies() {
+  let searchMovie = movieSearchBox.value.trim();
+  if (searchMovie.length > 0) {
+    searchListElement.classList.remove("hide-search-list");
+    loadApiMovies(searchMovie);
+  } else {
+    searchListElement.classList.add("hide-search-list");
+  }
+}
