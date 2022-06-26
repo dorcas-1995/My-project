@@ -60,3 +60,26 @@ function LoadedMovieDetails() {
     });
   });
 }
+
+function displayLoadedMovieDetails(details) {
+  resultGrid.innerHTML = `
+    <div class = "movie-poster">
+        <img src = "${
+          details.Poster != "N/A" ? details.Poster : "image_not_found.png"
+        }" alt = "movie poster">
+    </div>
+    <div class = "movie-info">
+        <h2 class = "movie-title">${details.Title}</h2>
+        <ul class = "movie-misc-info">
+            <li class = "year">Year: ${details.Year}</li>
+            <li class = "rated">Ratings: ${details.Rated}</li>
+            <li class = "released">Released: ${details.Released}</li>
+        </ul>
+       
+        <p class = "language"><b>Language:</b> ${details.Language}</p>
+        <p class = "awards"><b><i class = "fas fa-award"></i></b> ${
+          details.Awards
+        }</p>
+    </div>
+    `;
+}
