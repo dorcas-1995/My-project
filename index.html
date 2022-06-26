@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API Sandbox</title>
+  </head>
+  <body>
+    <button id="getText">Get Text</button>
+    <button id="getusers">get users</button>
+    <button id="getPosts">get posts</button>
+    <hr />
+    <div id="output"></div>
+    <form id="addpost">
+      <div>
+        <input type="title" id="title" placeholder="title" />
+      </div>
+      <div>
+        <textarea id="body" placeholder="body"></textarea>
+      </div>
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      //document.getElementById("getText").addEventListener("click", getText());
+
+      document.getElementById("getPosts").addEventListener("click", getPosts);
+      document.getElementById("addpost").addEventListener("submit", addPosts);
+
+      //   console.log(click)
+
+      //   function getText() {
+      //   fetch('sample.txt')
+      //   .then(function(res){
+      //      return res.text();
+      //   })
+
+      //   .then(function(data){
+      //       console.log(data);
+      //     });
+
+      //     fetch("sample.txt")
+      //       .then((res) => res.text())
+      //       .then((data) => {
+      //         document.getElementById("output").innerHTML = data;
+      //       })
+      //       .catch((err) => console.log(err));
+      //   }
+
+      function getusers() {
+        console.log("hello");
+        fetch("https://jsonplaceholder.typicode.com/posts")
+          .then((res) => res.json())
+          .then((data) => {
+            let output = "<h2>users/<h2>";
+            data.forEach(function (post) {
+              output += `
+                     <div>
+                        <h3>${post.id}</h3>
+                        <p>${post.title}</p>
+                        </div>
+                         `;
+            });
+            document.getElementById("output").innerHTML = output;
+          });
+      }
+
+      function getPosts() {
+        //    console.log('hello')
+        fetch("https://jsonplaceholder.typicode.com/posts")
+          .then((res) => res.json())
+          .then((data) => {
+            let output = "";
+
+            data.forEach(function (post) {
+              output += `
+                    <p>${post.id}</p>
+                    <h4>${post.title}</h4>
+                    <p>${post.body}</p>
+
+                    `;
+            });
+            document.getElementById("output").innerHTML = output;
+          });
+      }
+
+      function addPosts(e) {
+        e.preventDefault();
+
+        let title = document.getElementById("title").value;
+        let body = document.getElementById("body").value;
+
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-type": "application/json",
+          },
+          body:JSON.stringify({ title:title, body:body }),
+         
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+      }
+    </script>
+  </body>
+</html>
