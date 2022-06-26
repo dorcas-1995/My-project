@@ -2,8 +2,7 @@
 
 :root {
 
-    --dark-color: rgba(255, 255, 255, 0.59);
-    --light-dark-color: #292929;
+
     --yellow-color: rgba(16, 15, 15, 0.95);
 }
 
@@ -55,7 +54,7 @@ img {
 
 .logo {
     padding: 1rem 0;
-    border-bottom: 1px solid var(--light-dark-color);
+    border-bottom: 1px solid #292929;
 }
 
 .logo p {
@@ -65,7 +64,7 @@ img {
 }
 
 .logo p span {
-    color: var(--yellow-color);
+    color: rgba(16, 15, 15, 0.95);
 }
 
 .search-element {
@@ -103,7 +102,7 @@ img {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     outline: none;
-    color: var(--light-dark-color);
+    color: #292929;
     width: 350px;
 }
 
@@ -117,7 +116,7 @@ img {
 }
 
 .search-list .search-list-item {
-    background-color: var(--light-dark-color);
+    background-color: #292929;
     padding: 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.59);
     width: calc(350px - 8px);
@@ -169,7 +168,7 @@ img {
 }
 
 .search-list::-webkit-scrollbar-thumb {
-    background-color: var(--yellow-color);
+    background-color: rgba(16, 15, 15, 0.95);
     outline: none;
     border-radius: 10px;
 }
@@ -199,7 +198,7 @@ img {
 /* movie info stylings */
 .movie-title {
     font-size: 2rem;
-    color: var(--yellow-color);
+    color: rgba(16, 15, 15, 0.95);
 }
 
 .movie-misc-info {
@@ -221,7 +220,7 @@ img {
 }
 
 .movie-info .rated {
-    /*background-color: var(--yellow-color);*/
+    /*background-color: rgba(16,15,15,0.95);*/
     padding: 0.4rem;
     margin: 0 0.4rem;
     border-radius: 3px;
@@ -250,7 +249,7 @@ img {
 }
 
 .movie-info .language {
-    color: var(--yellow-color);
+    color: rgba(16, 15, 15, 0.95);
     font-style: italic;
 }
 
@@ -260,7 +259,7 @@ img {
 }
 
 .movie-info .awards i {
-    color: var(--yellow-color);
+    color: rgba(16, 15, 15, 0.95);
     margin: 1rem 0.7rem 0 0;
 }
 
